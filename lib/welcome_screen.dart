@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'file:///F:/flutter/walk_through/lib/custom_flat_button.dart';
+import 'package:walk_through/custom_flat_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
