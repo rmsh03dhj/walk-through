@@ -26,12 +26,17 @@ jobs:
         channel: 'stable'
     - run: flutter upgrade
     - run: flutter pub get
-    - run: flutter test
-    
-    - run: flutter build macos --release
-      # build Android version
-    
-    #- run: flutter build apk --debug --split-per-abi
+    - run: flutter  analyze
+    - run: flutter test --coverage
+      # Upload coverage reports to Codecov
+      # https://github.com/marketplace/actions/codecov
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: coverage/lcov.info
+
+    # - run: flutter build macos --release
     #- run: flutter build appbundle --target-platform android-arm,android-arm64,android-x64
     
     # this for integration test
