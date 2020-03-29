@@ -31,5 +31,5 @@ jobs:
     - run: flutter upgrade
     - run: flutter pub get
     - run: flutter test
-    - run: flutter build appbundle --target-platform android-arm,android-arm64,android-x64
+    #- run: flutter build appbundle --target-platform android-arm,android-arm64,android-x64
 
