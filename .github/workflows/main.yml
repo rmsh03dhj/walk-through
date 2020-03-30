@@ -31,7 +31,7 @@ jobs:
     - run: flutter test
 
     # - run: flutter build macos --release
-    - run: flutter build appbundle
+    - run: flutter build appbundle --release -v
     
     # this for integration test
     #- name: Run Flutter Driver tests
