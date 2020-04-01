@@ -13,7 +13,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [windows-latest]
 
     steps:
     # from https://github.com/marketplace/actions/flutter-action
@@ -27,17 +27,9 @@ jobs:
     - run: flutter upgrade
     - run: flutter pub get
     - run: flutter  analyze
-    - run: flutter test --coverage
-      # Upload coverage reports to Codecov
-      # https://github.com/marketplace/actions/codecov
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        file: coverage/lcov.info
+    - run: flutter test
 
-    # - run: flutter build macos --release
-    #- run: flutter build appbundle --target-platform android-arm,android-arm64,android-x64
+    - run: flutter build appbundle
     
     # this for integration test
     #- name: Run Flutter Driver tests
