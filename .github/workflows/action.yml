@@ -1,4 +1,6 @@
-on:  pull_request
+on:
+  pull_request:
+    types: [opened]
 
 jobs:
   add-reviews:
@@ -7,7 +9,4 @@ jobs:
       - uses: kentaro-m/auto-assign-action@v1.1.0
         with:
           repo-token: "${{ secrets.TOKEN }}"
-#          addReviewers: true
-#          addAssignees: true
-#          reviewers: rdhoju
-#          numberOfReviewers: 1
+          configuration-path: ".github/auto_assign_sql.yml"
