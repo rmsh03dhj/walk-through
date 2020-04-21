@@ -11,7 +11,5 @@ jobs:
           repo-token: "${{ secrets.TOKEN }}"
           addReviewers: true
           addAssignees: true
-          reviewers:
-            - rdhoju
-            - rmsh03dhj
+          reviewers: rdhoju
           numberOfReviewers: 1
