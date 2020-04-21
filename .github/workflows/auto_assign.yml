@@ -10,13 +10,9 @@ jobs:
       - uses: kentaro-m/auto-assign-action@v1.1.0
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        
           addReviewers: true
-
           addAssignees: true
-
-          reviewers: 
-            -rdhoju
+          reviewers:
+            - rdhoju
             - rmsh03dhj
-
           numberOfReviewers: 1
