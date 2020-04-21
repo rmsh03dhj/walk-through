@@ -16,6 +16,15 @@ jobs:
         os: [windows-latest]
 
     steps:
+
+      - uses: kentaro-m/auto-assign-action@v1.1.0
+        with:
+          repo-token: "${{ secrets.TOKEN }}"
+          addReviewers: true
+          addAssignees: true
+          reviewers: rdhoju
+          numberOfReviewers: 1
+
     # from https://github.com/marketplace/actions/flutter-action
     - uses: actions/checkout@v1
     - uses: actions/setup-java@v1
@@ -30,6 +39,16 @@ jobs:
     - run: flutter test
 
     - run: flutter build appbundle
+
+    uses: r0adkll/upload-google-play@v1
+    with:
+      serviceAccountJson: ${{ SERVICE_ACCOUNT_JSON }}
+      packageName: com.rdhoju.walk_through
+      releaseFile: /app/build/outputs/mapping/release/app-release.aab
+      track: beta
+      userFraction: 0.33
+      whatsNewDirectory: /distribution/whatsnew
+      mappingFile: /app/build/outputs/mapping/release/mapping.txt
     
     # this for integration test
     #- name: Run Flutter Driver tests
