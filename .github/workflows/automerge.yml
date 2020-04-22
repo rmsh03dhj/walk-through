@@ -34,7 +34,7 @@ jobs:
               repo: context.payload.repository.name,
               pull_number: context.payload.pull_request.number
             })
-          github-token: ${{github.kalpana}}
+          github-token: ${{secrets.kalpana}}
 #
 #  automerge:
 #    runs-on: ubuntu-latest
