@@ -27,6 +27,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.kalpana }}
           MERGE_METHOD: "squash"
           MERGE_COMMIT_MESSAGE: "pull-request-title-and-description"
-          UPDATE_METHOD: "rebase"
           MERGE_DELETE_BRANCH: true
-          MERGE_LABELS: ""
