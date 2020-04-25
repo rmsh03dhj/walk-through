@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: automerge
-        uses: "pascalgn/automerge-action@135f0bdb927d9807b5446f7ca9ecc2c51de03c4a"
+        uses: "pascalgn/automerge-action@493bb4288832f19203691042e34cd8f1a889c1d0"
         env:
           GITHUB_TOKEN: ${{ secrets.kalpana }}
           MERGE_METHOD: "squash"
