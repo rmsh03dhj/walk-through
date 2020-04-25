@@ -25,6 +25,6 @@ jobs:
         uses: "pascalgn/automerge-action@master"
         env:
           GITHUB_TOKEN: ${{ secrets.kalpana }}
-          MERGE_METHOD: "squash"
-          MERGE_COMMIT_MESSAGE: "pull-request-title-and-description"
-#          MERGE_DELETE_BRANCH: true
+#          MERGE_METHOD: "squash"
+#          MERGE_COMMIT_MESSAGE: "pull-request-title-and-description"
+##          MERGE_DELETE_BRANCH: true
